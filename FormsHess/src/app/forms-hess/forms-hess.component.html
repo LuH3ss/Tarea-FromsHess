@@ -4,31 +4,31 @@
     <form [formGroup]="tareaForms" (ngSubmit)="submit()">
         <div class="inputs-container">
         <div class="input"><h4>Nombre:</h4><input type="text" formControlName="nombre">
-            <span *ngIf="this.tareaForms.get('nombre')?.errors?.['required']">
+            <span *ngIf="this.tareaForms.get('nombre')?.errors?.['required'] && !tareaForms.get('nombre')?.pristine">
                 Por Favor, ingresa tu nombre antes de seguir.
             </span>
-            <span *ngIf="this.tareaForms.get('nombre')?.errors?.['minlength']">
+            <span *ngIf="this.tareaForms.get('nombre')?.errors?.['minlength'] && !tareaForms.get('nombre')?.pristine">
                 Tu nombre debe superar los tres(3) digitos.
             </span>
         </div>
         <div class="input"><h4>Artista:</h4><input type="text" formControlName="artista">
-            <span *ngIf="this.tareaForms.get('artista')?.errors?.['required']">
+            <span *ngIf="this.tareaForms.get('artista')?.errors?.['required'] && !tareaForms.get('artista')?.pristine">
                 Por Favor, ingresa el nombre del artista o banda.
             </span>
-            <span *ngIf="this.tareaForms.get('artista')?.errors?.['maxlength']">
+            <span *ngIf="this.tareaForms.get('artista')?.errors?.['maxlength'] && !tareaForms.get('artista')?.pristine">
                 El nombre no puede superar los treintaycinco(35) caracteres.
             </span>
         </div >
         <div class="input"><h4>Canción:</h4><input type="text" formControlName="cancion">
-            <span *ngIf="this.tareaForms.get('cancion')?.errors?.['required']">
+            <span *ngIf="this.tareaForms.get('cancion')?.errors?.['required'] && !tareaForms.get('cancion')?.pristine">
                 Debes ingresar el nombre de la cancion.
             </span>
-            <span *ngIf="this.tareaForms.get('cancion')?.errors?.['minlength']">
+            <span *ngIf="this.tareaForms.get('cancion')?.errors?.['minlength'] && !tareaForms.get('cancion')?.pristine">
                 La cancion debe tener mas de dos(2) caracteres.
             </span>
         </div>
         <div class="input"><h4>Momento:</h4><input type="text" formControlName="momento">
-            <span *ngIf="this.tareaForms.get('momento')?.errors?.['maxlength']">
+            <span *ngIf="this.tareaForms.get('momento')?.errors?.['maxlength'] && !tareaForms.get('momento')?.pristine">
                 Podes ingresar solo hasta cien(100) caracteres. 
             </span>
         </div>
